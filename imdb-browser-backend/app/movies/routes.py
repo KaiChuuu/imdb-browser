@@ -1,18 +1,25 @@
 from . import bp
 from .. import db
 
+from sqlalchemy import text
 from flask import jsonify
 
 @bp.route("/random/<int:limit>")
 def random_movies(limit):
-    sql = ("SELECT * "
-           "FROM movies "
-           "ORDER BY RAND() "
-           "LIMIT :limit")
-    result = db.session.execute(sql, {"limit": limit})
-    movies = result.fetchall()
+    sql = text('SELECT "Series_Title", "Poster_Link", "Released_Year", "Runtime", "Genre", "IMDB_Rating", "Overview" '
+               'FROM "imdb_movies" '
+               'ORDER BY RANDOM() '
+               'LIMIT :limit')
 
-    return jsonify([{"id": m.id, "name": m.name, "year": m.year} for m in movies])
+    result = db.session.execute(sql, {"limit": limit})
+    rows = [dict(row) for row in result]
+    return jsonify(rows)
+
+@bp.route("/users")
+def get_users():
+    result = db.session.execute(text('SELECT "Series_Title" FROM "imdb_movies" LIMIT 5;'))
+    rows = [dict(row) for row in result]
+    return jsonify(rows)
 
 
 @bp.route("/range/<int:start>/<int:end>")

@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --font-exo: "Exo 2", sans-serif;
+}
+
+@theme {
+  --color-red: #AD2831;
+  --color-black: #242424;
+  --color-yellow: #FACC15;
+  --color-grey: #374151;
+  --color-light-grey: #4B5563;
+}
+
+@utility text-base-xl {
+  font-family: var(--font-exo);
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0px;
+}
+
+@utility text-base-lg {
+  font-family: var(--font-exo);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+@utility text-base-md {
+  font-family: var(--font-exo);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0px;
+}
+
+@utility text-base-sm {
+  font-family: var(--font-exo);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.25px;
+}
+
+:root {
+  font-family: "Exo 2", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.btn-default {
+  background-color: var(--color-grey);
+  color: white;
+  transition: background-color 0.2s;
+}
+
+.btn-default:hover {
+  background-color: var(--color-light-grey);
+}
+
+.bg-stripes {
+  background: repeating-linear-gradient(
+    45deg,              /* angle: top-left → bottom-right */
+    #1f1f1f,             /* dark gray/black stripe */
+    #1f1f1f 40px,        /* stripe thickness */
+    #2d2d2d 40px,        /* space */
+    #2d2d2d 80px         /* repeat after 80px */
+  );
+}
