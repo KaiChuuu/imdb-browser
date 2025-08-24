@@ -1,4 +1,4 @@
-import { type RandomMovieDataType } from "@/types/RandomMovieDataType";
+import type { RandomMovieDataType } from "@/types/RandomMovieDataType";
 
 export const mockData: RandomMovieDataType[] = [
   {
