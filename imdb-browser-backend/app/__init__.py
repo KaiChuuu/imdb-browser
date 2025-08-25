@@ -8,7 +8,6 @@ from dotenv import load_dotenv
 db = SQLAlchemy()
 engine = None
 
-
 def create_app():
     global engine
 

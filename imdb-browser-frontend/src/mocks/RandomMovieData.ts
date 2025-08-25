@@ -2,93 +2,103 @@ import type { RandomMovieDataType } from "@/types/RandomMovieDataType";
 
 export const mockData: RandomMovieDataType[] = [
   {
-    "Genre": "Drama",
+    "Genre": "Action, Drama, Mystery",
+    "IMDB_Rating": 8.0,
+    "Overview": "Young Blade Runner K's discovery of a long-buried secret leads him to track down former Blade Runner Rick Deckard, who's been missing for thirty years.",
+    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BNzA1Njg4NzYxOV5BMl5BanBnXkFtZTgwODk5NjU3MzI@.jpg",
+    "Released_Year": "2017",
+    "Runtime": "164 min",
+    "Series_Title": "Blade Runner 2049",
+    "row_id": 346
+  },
+  {
+    "Genre": "Action, Crime, Thriller",
+    "IMDB_Rating": 8.0,
+    "Overview": "An elite counter-intelligence unit learns of a plot, masterminded by a maniacal madman. With the clock ticking, it's up to them to track the terrorists' international tentacles and prevent them from striking at the heart of India.",
+    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BYTdhNjBjZDctYTlkYy00ZGIxLWFjYTktODk5ZjNlMzI4NjI3XkEyXkFqcGdeQXVyMjY1MjkzMjE@.jpg",
+    "Released_Year": "2015",
+    "Runtime": "159 min",
+    "Series_Title": "Baby",
+    "row_id": 333
+  },
+  {
+    "Genre": "Crime, Drama, Fantasy",
+    "IMDB_Rating": 7.9,
+    "Overview": "Oskar, an overlooked and bullied boy, finds love and revenge through Eli, a beautiful but peculiar girl.",
+    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BOWM4NTY2NTMtZDZlZS00NTgyLWEzZDMtODE3ZGI1MzI3ZmU5XkEyXkFqcGdeQXVyNzI1NzMxNzM@.jpg",
+    "Released_Year": "2008",
+    "Runtime": "114 min",
+    "Series_Title": "Låt den rätte komma in",
+    "row_id": 493
+  },
+  {
+    "Genre": "Comedy",
+    "IMDB_Rating": 8.4,
+    "Overview": "An insane general triggers a path to nuclear holocaust that a War Room full of politicians and generals frantically tries to stop.",
+    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BZWI3ZTMxNjctMjdlNS00NmUwLWFiM2YtZDUyY2I3N2MxYTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@.jpg",
+    "Released_Year": "1964",
+    "Runtime": "95 min",
+    "Series_Title": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
+    "row_id": 89
+  },
+  {
+    "Genre": "Action, Adventure, Drama",
+    "IMDB_Rating": 7.6,
+    "Overview": "In the future, the Japanese government captures a class of ninth-grade students and forces them to kill each other under the revolutionary \"Battle Royale\" act.",
+    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMDc2MGYwYzAtNzE2Yi00YmU3LTkxMDUtODk2YjhiNDM5NDIyXkEyXkFqcGdeQXVyMTEwNDU1MzEy.jpg",
+    "Released_Year": "2000",
+    "Runtime": "114 min",
+    "Series_Title": "Batoru rowaiaru",
+    "row_id": 946
+  },
+  {
+    "Genre": "Drama, Horror, Thriller",
     "IMDB_Rating": 7.7,
-    "Overview": "A manager of an orphanage in India is sent to Copenhagen, Denmark, where he discovers a life-altering family secret.",
-    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMjIxODEyOTQ5Ml5BMl5BanBnXkFtZTcwNjE3NzI5Mw@@.jpg",
-    "Released_Year": "2006",
-    "Runtime": "120 min",
-    "Series_Title": "Efter brylluppet"
+    "Overview": "A sex-repulsed woman who disapproves of her sister's boyfriend sinks into depression and has horrific visions of rape and violence.",
+    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BZTU5ZThjNzAtNjc4NC00OTViLWIxYTYtODFmMTk5Y2NjZjZiL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjc1NTYyMjg@.jpg",
+    "Released_Year": "1965",
+    "Runtime": "105 min",
+    "Series_Title": "Repulsion",
+    "row_id": 859
   },
   {
     "Genre": "Crime, Drama, Mystery",
     "IMDB_Rating": 7.7,
-    "Overview": "In the late 1960s/early 1970s, a San Francisco cartoonist becomes an amateur detective obsessed with tracking down the Zodiac Killer, an unidentified individual who terrorizes Northern California with a killing spree.",
-    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BN2UwNDc5NmEtNjVjZS00OTI5LWE5YjctMWM3ZjBiZGYwMGI2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@.jpg",
-    "Released_Year": "2007",
-    "Runtime": "157 min",
-    "Series_Title": "Zodiac"
-  },
-  {
-    "Genre": "Crime, Drama, Romance",
-    "IMDB_Rating": 7.8,
-    "Overview": "A father becomes worried when a local gangster befriends his son in the Bronx in the 1960s.",
-    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMTczOTczNjE3Ml5BMl5BanBnXkFtZTgwODEzMzg5MTI@.jpg",
-    "Released_Year": "1993",
-    "Runtime": "121 min",
-    "Series_Title": "A Bronx Tale"
-  },
-  {
-    "Genre": "Comedy, Drama, Romance",
-    "IMDB_Rating": 8.1,
-    "Overview": "Three inseparable childhood friends are just out of college. Nothing comes between them - until they each fall in love, and their wildly different approaches to relationships creates tension.",
-    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMjRjMTYwMTYtMmRkNi00MmVkLWE0MjQtNmM3YjI0NWFhZDNmXkEyXkFqcGdeQXVyODE5NzE3OTE@.jpg",
-    "Released_Year": "2001",
-    "Runtime": "183 min",
-    "Series_Title": "Dil Chahta Hai"
-  },
-  {
-    "Genre": "Drama, Mystery",
-    "IMDB_Rating": 8.3,
-    "Overview": "Following the death of publishing tycoon Charles Foster Kane, reporters scramble to uncover the meaning of his final utterance; 'Rosebud'.",
-    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BYjBiOTYxZWItMzdiZi00NjlkLWIzZTYtYmFhZjhiMTljOTdkXkEyXkFqcGdeQXVyNzkwMjQ5NzM@.jpg",
-    "Released_Year": "1941",
-    "Runtime": "119 min",
-    "Series_Title": "Citizen Kane"
+    "Overview": "An altar boy is accused of murdering a priest, and the truth is buried several layers deep.",
+    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BZTM2NWI2OGYtYWNhMi00ZTlmLTg2ZTAtMmI5NWRjODA5YTE1XkEyXkFqcGdeQXVyODE2OTYwNTg@.jpg",
+    "Released_Year": "1996",
+    "Runtime": "129 min",
+    "Series_Title": "Primal Fear",
+    "row_id": 811
   },
   {
     "Genre": "Comedy, Crime, Drama",
-    "IMDB_Rating": 7.8,
-    "Overview": "Two men are framed and sent to jail, where they meet a murderer who helps them escape and leave the state.",
-    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BM2ZmNDJiZTUtYjg5Zi00M2I3LTliZjAtNzQ4NTlkYTAzYTAxXkEyXkFqcGdeQXVyNTkyMDc0MjI@.jpg",
-    "Released_Year": "1986",
-    "Runtime": "107 min",
-    "Series_Title": "Down by Law"
+    "IMDB_Rating": 8.2,
+    "Overview": "The story of six young Indians who assist an English woman to film a documentary on the freedom fighters from their past, and the events that lead them to relive the long-forgotten saga of freedom.",
+    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BYThmZDA0YmQtMWJhNy00MDQwLTk0Y2YtMDhmZTE5ZjhlNjliXkEyXkFqcGdeQXVyODE5NzE3OTE@.jpg",
+    "Released_Year": "2006",
+    "Runtime": "167 min",
+    "Series_Title": "Rang De Basanti",
+    "row_id": 166
   },
   {
-    "Genre": "Comedy, Crime",
-    "IMDB_Rating": 7.6,
-    "Overview": "Two New Yorkers accused of murder in rural Alabama while on their way back to college call in the help of one of their cousins, a loudmouth lawyer with no trial experience.",
-    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMTQxNDYzMTg1M15BMl5BanBnXkFtZTgwNzk4MDgxMTE@.jpg",
-    "Released_Year": "1992",
-    "Runtime": "120 min",
-    "Series_Title": "My Cousin Vinny"
-  },
-  {
-    "Genre": "Drama",
-    "IMDB_Rating": 8.1,
-    "Overview": "An innocent yet pampered young virgin and her family's pregnant and jealous servant set out to deliver candles to church, but only one returns from events that transpire in the woods along the way.",
-    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BZjgyMzZkMGUtNTBhZC00OTkzLWI4ZmMtYzcwMzc5MjQ0YTM3XkEyXkFqcGdeQXVyMTMxMTY0OTQ@.jpg",
-    "Released_Year": "1960",
-    "Runtime": "89 min",
-    "Series_Title": "Jungfrukällan"
-  },
-  {
-    "Genre": "Animation, Action, Adventure",
+    "Genre": "Comedy, Western",
     "IMDB_Rating": 7.7,
-    "Overview": "An ordinary LEGO construction worker, thought to be the prophesied as \"special\", is recruited to join a quest to stop an evil tyrant from gluing the LEGO universe into eternal stasis.",
-    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMTg4MDk1ODExN15BMl5BanBnXkFtZTgwNzIyNjg3MDE@.jpg",
-    "Released_Year": "2014",
-    "Runtime": "100 min",
-    "Series_Title": "The Lego Movie"
+    "Overview": "In order to ruin a western town, a corrupt politician appoints a black Sheriff, who promptly becomes his most formidable adversary.",
+    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BZGZmMWE1MDYtNzAyNC00MDMzLTgzZjQtNTQ5NjYzN2E4MzkzXkEyXkFqcGdeQXVyNDk3NzU2MTQ@.jpg",
+    "Released_Year": "1974",
+    "Runtime": "93 min",
+    "Series_Title": "Blazing Saddles",
+    "row_id": 848
   },
   {
-    "Genre": "Action, Drama",
-    "IMDB_Rating": 7.7,
-    "Overview": "An American military advisor embraces the Samurai culture he was hired to destroy after he is captured in battle.",
-    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMzkyNzQ1Mzc0NV5BMl5BanBnXkFtZTcwODg3MzUzMw@@.jpg",
-    "Released_Year": "2003",
-    "Runtime": "154 min",
-    "Series_Title": "The Last Samurai"
+    "Genre": "Crime, Film-Noir, Thriller",
+    "IMDB_Rating": 7.9,
+    "Overview": "A psychopath forces a tennis star to comply with his theory that two strangers can get away with murder.",
+    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BNzkwNjk4ODgtYjRmMi00ODdhLWIyNjUtNWQyMjg2N2E2NjlhXkEyXkFqcGdeQXVyNjE5MjUyOTM@.jpg",
+    "Released_Year": "1951",
+    "Runtime": "101 min",
+    "Series_Title": "Strangers on a Train",
+    "row_id": 561
   }
 ]

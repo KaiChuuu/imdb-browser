@@ -1,4 +1,5 @@
 export interface RandomMovieDataType {
+  row_id: number;
   Genre: string;
   IMDB_Rating: number;
   Overview: string;

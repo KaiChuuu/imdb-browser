@@ -1,5 +1,5 @@
 export interface MovieListDataType {
-  Genre: string;
+  row_id: number;
   IMDB_Rating: number;
   Poster_Link: string;
   Released_Year: string;

@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { fetchData } from "@/services/RandomMovieDataService";
 import { type RandomMovieDataType } from "@/types/RandomMovieDataType";
 
+import Poster from "@/components/common/Poster";
+
 import StarIcon from "@/assets/icons/star-solid.svg?react";
 import ClockIcon from "@/assets/icons/clock.svg?react";
 import LeftArrowIcon from "@/assets/icons/left-arrow.svg?react";
@@ -32,7 +34,7 @@ function HeroCarousel() {
         {data.map((item, index) => (
           <div className="flex justify-center w-full flex-shrink-0" key={index}>
             <div className="flex py-15 px-25 gap-15 bg-stripes border rounded">
-              <img className="w-64 h-auto" src={item.Poster_Link} />
+              <Poster width="16rem" src={item.Poster_Link} />
 
               <div className="ml-4 max-w-lg flex flex-col h-full justify-between">
                 <div>

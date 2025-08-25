@@ -6,7 +6,7 @@ from flask import request, jsonify
 
 @bp.route("/random/<int:limit>")
 def random_movies(limit):
-    sql = text('SELECT "Series_Title", "Poster_Link", "Released_Year", "Runtime", "Genre", "IMDB_Rating", "Overview" '
+    sql = text('SELECT "Series_Title", "row_id", "Poster_Link", "Released_Year", "Runtime", "Genre", "IMDB_Rating", "Overview" '
                'FROM "imdb_movies" '
                'ORDER BY RANDOM() '
                'LIMIT :limit')
@@ -26,7 +26,7 @@ def range_movies():
     rating = request.args.get("rating")
     sort_by = request.args.getlist("sort")
 
-    query = '''SELECT "Series_Title", "Poster_Link", "Released_Year", "IMDB_Rating", "Genre"
+    query = '''SELECT "Series_Title", "row_id", "Poster_Link", "Released_Year", "IMDB_Rating"
             FROM "imdb_movies"
             WHERE 1=1'''
 
