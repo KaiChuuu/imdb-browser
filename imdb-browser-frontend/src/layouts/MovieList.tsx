@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import { fetchData } from "@/services/MovieListDataService";
 import type {
@@ -149,7 +150,12 @@ function MovieList() {
           {data?.movies.map((item: MovieListDataType, index) => {
             const poster = item.Poster_Link.replace(/\.jpg$/, "._V1_UX300.jpg");
             return (
-              <div className="flex flex-col w-60" key={index}>
+              <Link
+                to={`/detail/${item.row_id}`}
+                state={{ genres: item.Genre }}
+                className="flex flex-col w-60"
+                key={index}
+              >
                 <div className="relative w-full">
                   <Poster width="100%" height="22.5rem" src={poster} />
 
@@ -167,7 +173,7 @@ function MovieList() {
                 <span className="p-1 bg-red text-base-md truncate">
                   {item.Series_Title}
                 </span>
-              </div>
+              </Link>
             );
           })}
         </div>
@@ -188,7 +194,7 @@ function MovieList() {
           return (
             <button
               key={page}
-              onClick={() => indexPage(i + 1)}
+              onClick={() => indexPage(page)}
               className={`flex text-base-md w-10 h-10 items-center justify-center rounded 
             ${page === currentPage ? "bg-red" : "btn-default"}`}
             >

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import SearchBar from "@/components/common/SearchBar";
 
@@ -8,7 +9,9 @@ function Navbar() {
   return (
     <div className="bg-red w-full">
       <div className="mx-auto flex justify-between items-center px-5 py-4 max-w-[1320px]">
-        <div className="text-base-xl">IMDB Browser</div>
+        <Link to="/" className="text-base-xl font-bold">
+          IMDB Browser
+        </Link>
 
         <div className="flex gap-5">
           <SearchBar query={query} setQuery={setQuery} />

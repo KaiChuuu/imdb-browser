@@ -1,4 +1,5 @@
 export interface SimilarMovieDataType {
+  Genre: string;
   row_id: number;
   IMDB_Rating: number;
   Poster_Link: string;

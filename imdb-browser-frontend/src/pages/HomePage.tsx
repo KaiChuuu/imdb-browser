@@ -7,13 +7,15 @@ import MovieBackground from "@/components/MovieBackground";
 
 function HomePage() {
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Navbar />
 
-      <MovieBackground>
-        <HeroCarousel />
-        <MovieList />
-      </MovieBackground>
+      <div className="flex flex-1">
+        <MovieBackground>
+          <HeroCarousel />
+          <MovieList />
+        </MovieBackground>
+      </div>
 
       <Footer />
     </div>

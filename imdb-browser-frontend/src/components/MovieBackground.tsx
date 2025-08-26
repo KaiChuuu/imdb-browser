@@ -8,7 +8,7 @@ function MovieBackground({ children }: { children: React.ReactNode }) {
   );
 
   return (
-    <div className="relative w-full min-h-screen overflow-hidden">
+    <div className="relative w-full overflow-hidden">
       <div
         className="absolute left-0 top-0 flex flex-wrap"
         style={{

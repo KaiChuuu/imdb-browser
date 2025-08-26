@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 
 import { fetchData } from "@/services/MovieDetailDataService";
 import type { MovieDetailDataType } from "@/types/MovieDetailDataType";
@@ -9,9 +9,13 @@ import Navbar from "@/layouts/NavBar";
 import SimilarMoviesList from "@/layouts/SimilarMoviesList";
 
 import Poster from "@/components/common/Poster";
+import MovieBackground from "@/components/MovieBackground";
 
 function DetailPage() {
   const { row_id } = useParams<{ row_id: string }>();
+  const location = useLocation();
+  const detailGenres = location.state?.genres;
+
   const [data, setData] = useState<MovieDetailDataType | null>(null);
 
   useEffect(() => {
@@ -19,14 +23,14 @@ function DetailPage() {
     fetchData(Number(row_id)).then(setData);
   }, [row_id]);
 
-  const genres = data?.Genre?.split(",") || [];
+  const genresSplit = detailGenres.split(",") || [];
   const gross = data?.Gross ? "$" + data?.Gross : "";
 
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
 
-      <div className="max-w-[1320px] mx-auto flex-1 flex flex-col mb-20">
+      <div className="max-w-[1320px] mx-auto flex flex-col mb-20">
         <div className="py-10 flex gap-10">
           <Poster height="35rem" src={data?.Poster_Link} />
           <div className="mt-13 flex flex-col max-w-xl">
@@ -94,7 +98,7 @@ function DetailPage() {
 
           <div className="w-1/3">
             <div className="flex flex-wrap gap-3">
-              {genres.map((genre, index) => (
+              {genresSplit.map((genre: string, index: number) => (
                 <span
                   key={index}
                   className="text-white text-base-lg rounded bg-red px-2 py-1"
@@ -110,7 +114,11 @@ function DetailPage() {
         </div>
       </div>
 
-      <SimilarMoviesList row_id={Number(row_id)} />
+      <div className="flex flex-1">
+        <MovieBackground>
+          <SimilarMoviesList row_id={Number(row_id)} genre={detailGenres} />
+        </MovieBackground>
+      </div>
 
       <Footer />
     </div>

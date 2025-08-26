@@ -3,145 +3,165 @@ import type { MovieListResponse } from "@/types/MovieListDataType";
 export const mockData: MovieListResponse = {
   "movies": [
     {
+      "Genre": "Action, Biography, Crime",
       "IMDB_Rating": 7.6,
-      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BNGEwMTRmZTQtMDY4Ni00MTliLTk5ZmMtOWMxYWMyMTllMDg0L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjc1NTYyMjg@.jpg",
-      "Released_Year": "1961",
-      "Series_Title": "Breakfast at Tiffany's",
-      "row_id": 995
-    },
-    {
-      "IMDB_Rating": 7.6,
-      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BZjQyMGUwNzAtNTc2MC00Y2FjLThlM2ItZGRjNzM0OWVmZGYyXkEyXkFqcGdeQXVyNjc1NTYyMjg@.jpg",
-      "Released_Year": "1964",
-      "Series_Title": "A Hard Day's Night",
-      "row_id": 994
-    },
-    {
-      "IMDB_Rating": 7.6,
-      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMzAyNDUwYzUtN2NlMC00ODliLWExMjgtMGMzNmYzZmUwYTg1XkEyXkFqcGdeQXVyNjc1NTYyMjg@.jpg",
-      "Released_Year": "1970",
-      "Series_Title": "Kelly's Heroes",
-      "row_id": 992
-    },
-    {
-      "IMDB_Rating": 7.6,
-      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BYzZhODNiOWYtMmNkNS00OTFhLTkzYzktYTQ4ZmNmZWMyN2ZiL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjc1NTYyMjg@.jpg",
-      "Released_Year": "1973",
-      "Series_Title": "The Long Goodbye",
-      "row_id": 990
-    },
-    {
-      "IMDB_Rating": 7.6,
-      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMGQ0OGM5YjItYzYyMi00NmVmLWI3ODMtMTY2NGRkZmI5MWU2XkEyXkFqcGdeQXVyMzI0NDc4ODY@.jpg",
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BNDQ3MzNjMDItZjE0ZS00ZTYxLTgxNTAtM2I4YjZjNWFjYjJlL2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@.jpg",
       "Released_Year": "1979",
-      "Series_Title": "The Muppet Movie",
-      "row_id": 985
+      "Series_Title": "Escape from Alcatraz",
+      "row_id": 986
     },
     {
+      "Genre": "Action, Crime, Thriller",
       "IMDB_Rating": 7.6,
-      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BM2I1ZWNkYjEtYWY3ZS00MmMwLWI5OTEtNWNkZjNiYjIwNzY0XkEyXkFqcGdeQXVyNTI4MjkwNjA@.jpg",
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BYTU2MWRiMTMtYzAzZi00NGYzLTlkMDEtNWQ3MzZlNTJlNzZkL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjc1NTYyMjg@.jpg",
+      "Released_Year": "1979",
+      "Series_Title": "The Warriors",
+      "row_id": 984
+    },
+    {
+      "Genre": "Action, Adventure, Sci-Fi",
+      "IMDB_Rating": 7.6,
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BN2VlNjNhZWQtMTY2OC00Y2E1LWJkNGUtMDU4M2ViNzliMGYwXkEyXkFqcGdeQXVyNTAyODkwOQ@@.jpg",
+      "Released_Year": "1981",
+      "Series_Title": "Mad Max 2",
+      "row_id": 983
+    },
+    {
+      "Genre": "Action, Crime, Thriller",
+      "IMDB_Rating": 7.6,
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BZTllNWNlZjctMWQwMS00ZDc3LTg5ZjMtNzhmNzhjMmVhYTFlXkEyXkFqcGdeQXVyNTc1NTQxODI@.jpg",
       "Released_Year": "1987",
-      "Series_Title": "Planes, Trains & Automobiles",
-      "row_id": 979
+      "Series_Title": "Lethal Weapon",
+      "row_id": 980
     },
     {
+      "Genre": "Action, Crime, Drama",
       "IMDB_Rating": 7.6,
-      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BODk1ZWM4ZjItMjFhZi00MDMxLTgxNmYtODFhNWZlZTkwM2UwXkEyXkFqcGdeQXVyMTQxNzMzNDI@.jpg",
-      "Released_Year": "1988",
-      "Series_Title": "The Naked Gun: From the Files of Police Squad!",
-      "row_id": 978
-    },
-    {
-      "IMDB_Rating": 7.6,
-      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMjE0ODEwNjM2NF5BMl5BanBnXkFtZTcwMjU2Mzg3NA@@.jpg",
-      "Released_Year": "1989",
-      "Series_Title": "When Harry Met Sally...",
-      "row_id": 977
-    },
-    {
-      "IMDB_Rating": 7.6,
-      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMzFkM2YwOTQtYzk2Mi00N2VlLWE3NTItN2YwNDg1YmY0ZDNmXkEyXkFqcGdeQXVyMTMxODk2OTU@.jpg",
-      "Released_Year": "1990",
-      "Series_Title": "Home Alone",
-      "row_id": 975
-    },
-    {
-      "IMDB_Rating": 7.6,
-      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BNjg5ZDM0MTEtYTZmNC00NDJiLWI5MTktYzk4N2QxY2IxZTc2L2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@.jpg",
-      "Released_Year": "1991",
-      "Series_Title": "Delicatessen",
-      "row_id": 974
-    },
-    {
-      "IMDB_Rating": 7.6,
-      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMTQxNDYzMTg1M15BMl5BanBnXkFtZTgwNzk4MDgxMTE@.jpg",
-      "Released_Year": "1992",
-      "Series_Title": "My Cousin Vinny",
-      "row_id": 972
-    },
-    {
-      "IMDB_Rating": 7.6,
-      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMTM5MDY5MDQyOV5BMl5BanBnXkFtZTgwMzM3NzMxMDE@.jpg",
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BYjcxMzM3OWMtNmM3Yy00YzBkLTkxMmQtMDk4MmM3Y2Y4MDliL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@.jpg",
       "Released_Year": "1993",
-      "Series_Title": "Dazed and Confused",
-      "row_id": 971
+      "Series_Title": "Falling Down",
+      "row_id": 970
     },
     {
+      "Genre": "Action, Adventure, Thriller",
       "IMDB_Rating": 7.6,
-      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BNTliYTI1YTctMTE0Mi00NDM0LThjZDgtYmY3NGNiODBjZjAwXkEyXkFqcGdeQXVyMTAwMzUyOTc@.jpg",
-      "Released_Year": "1994",
-      "Series_Title": "Trois couleurs: Blanc",
-      "row_id": 969
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BZjI0ZWFiMmQtMjRlZi00ZmFhLWI4NmYtMjQ5YmY0MzIyMzRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@.jpg",
+      "Released_Year": "1995",
+      "Series_Title": "Die Hard: With a Vengeance",
+      "row_id": 965
     },
     {
+      "Genre": "Action, Adventure, Drama",
       "IMDB_Rating": 7.6,
-      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BNjA2ZDY3ZjYtZmNiMC00MDU5LTgxMWEtNzk1YmI3NzdkMTU0XkEyXkFqcGdeQXVyNjQyMjcwNDM@.jpg",
-      "Released_Year": "1998",
-      "Series_Title": "Fear and Loathing in Las Vegas",
-      "row_id": 959
-    },
-    {
-      "IMDB_Rating": 7.6,
-      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BZTM2ZGJmNjQtN2UyOS00NjcxLWFjMDktMDE2NzMyNTZlZTBiXkEyXkFqcGdeQXVyNzkwMjQ5NzM@.jpg",
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMDc2MGYwYzAtNzE2Yi00YmU3LTkxMDUtODk2YjhiNDM5NDIyXkEyXkFqcGdeQXVyMTEwNDU1MzEy.jpg",
       "Released_Year": "2000",
-      "Series_Title": "American Psycho",
-      "row_id": 955
+      "Series_Title": "Batoru rowaiaru",
+      "row_id": 946
     },
     {
+      "Genre": "Action, Crime, Mystery",
       "IMDB_Rating": 7.6,
-      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BYmUzODQ5MGItZTZlNy00MDBhLWIxMmItMjg4Y2QyNDFlMWQ2XkEyXkFqcGdeQXVyMTMxODk2OTU@.jpg",
-      "Released_Year": "2001",
-      "Series_Title": "The Royal Tenenbaums",
-      "row_id": 947
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BZTI3YzZjZjEtMDdjOC00OWVjLTk0YmYtYzI2MGMwZjFiMzBlXkEyXkFqcGdeQXVyMTQxNzMzNDI@.jpg",
+      "Released_Year": "2002",
+      "Series_Title": "Minority Report",
+      "row_id": 953
     },
     {
+      "Genre": "Action, Crime, Drama",
       "IMDB_Rating": 7.6,
-      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMTUzNDgyMzg3Ml5BMl5BanBnXkFtZTcwMzIxNTAwMQ@@.jpg",
-      "Released_Year": "2003",
-      "Series_Title": "The Station Agent",
-      "row_id": 939
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMTYzZWE3MDAtZjZkMi00MzhlLTlhZDUtNmI2Zjg3OWVlZWI0XkEyXkFqcGdeQXVyNDk3NzU2MTQ@.jpg",
+      "Released_Year": "2005",
+      "Series_Title": "Lord of War",
+      "row_id": 933
     },
     {
+      "Genre": "Action, Biography, Drama",
       "IMDB_Rating": 7.6,
-      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BNjIwOGJhY2QtMTA5Yi00MDhlLWE5OTgtYmIzZDNlM2UwZjMyXkEyXkFqcGdeQXVyNTA4NzY1MzY@.jpg",
-      "Released_Year": "2003",
-      "Series_Title": "Jeux d'enfants",
-      "row_id": 937
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMTI5MjA2Mzk2M15BMl5BanBnXkFtZTcwODY1MDUzMQ@@.jpg",
+      "Released_Year": "2006",
+      "Series_Title": "Huo Yuan Jia",
+      "row_id": 925
     },
     {
+      "Genre": "Action, Drama",
       "IMDB_Rating": 7.6,
-      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMTU5MDg0NTQ1N15BMl5BanBnXkFtZTcwMjA4Mjg3Mg@@.jpg",
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BNWMxYTZlOTUtZDExMi00YzZmLTkwYTMtZmM2MmRjZmQ3OGY4XkEyXkFqcGdeQXVyMTAwMzUyMzUy.jpg",
+      "Released_Year": "2006",
+      "Series_Title": "300",
+      "row_id": 930
+    },
+    {
+      "Genre": "Action, Crime, Drama",
+      "IMDB_Rating": 7.6,
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMTcwMzU0OTY3NF5BMl5BanBnXkFtZTYwNzkwNjg2.jpg",
+      "Released_Year": "2007",
+      "Series_Title": "Eastern Promises",
+      "row_id": 919
+    },
+    {
+      "Genre": "Action, Adventure, Family",
+      "IMDB_Rating": 7.6,
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BNzU3NDg4NTAyNV5BMl5BanBnXkFtZTcwOTg2ODg1Mg@@.jpg",
       "Released_Year": "2009",
-      "Series_Title": "Zombieland",
-      "row_id": 913
+      "Series_Title": "Harry Potter and the Half-Blood Prince",
+      "row_id": 929
     },
     {
+      "Genre": "Action, Adventure, Mystery",
+      "IMDB_Rating": 7.6,
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMTg0NjEwNjUxM15BMl5BanBnXkFtZTcwMzk0MjQ5Mg@@.jpg",
+      "Released_Year": "2009",
+      "Series_Title": "Sherlock Holmes",
+      "row_id": 915
+    },
+    {
+      "Genre": "Action, Adventure, Crime",
+      "IMDB_Rating": 7.6,
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMjI2ODE4ODAtMDA3MS00ODNkLTg4N2EtOGU0YjZmNGY4NjZlXkEyXkFqcGdeQXVyMTY5MDE5NA@@.jpg",
+      "Released_Year": "2009",
+      "Series_Title": "Celda 211",
+      "row_id": 910
+    },
+    {
+      "Genre": "Action, Drama, Mystery",
+      "IMDB_Rating": 7.6,
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BY2IzNGNiODgtOWYzOS00OTI0LTgxZTUtOTA5OTQ5YmI3NGUzXkEyXkFqcGdeQXVyNjU0OTQ0OTY@.jpg",
+      "Released_Year": "2009",
+      "Series_Title": "Watchmen",
+      "row_id": 932
+    },
+    {
+      "Genre": "Action, Comedy, Crime",
       "IMDB_Rating": 7.6,
       "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMTMzNzEzMDYxM15BMl5BanBnXkFtZTcwMTc0NTMxMw@@.jpg",
       "Released_Year": "2010",
       "Series_Title": "Kick-Ass",
       "row_id": 909
+    },
+    {
+      "Genre": "Action, Thriller",
+      "IMDB_Rating": 7.6,
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BZGIxODNjM2YtZjA5Mi00MjA5LTk2YjItODE0OWI5NThjNTBmXkEyXkFqcGdeQXVyNzQ1ODk3MTQ@.jpg",
+      "Released_Year": "2011",
+      "Series_Title": "Serbuan maut",
+      "row_id": 901
+    },
+    {
+      "Genre": "Action, Crime, Drama",
+      "IMDB_Rating": 7.6,
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMjMxNjU0ODU5Ml5BMl5BanBnXkFtZTcwNjI4MzAyOA@@.jpg",
+      "Released_Year": "2012",
+      "Series_Title": "End of Watch",
+      "row_id": 902
+    },
+    {
+      "Genre": "Action, Adventure, Drama",
+      "IMDB_Rating": 7.6,
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMTgwODk3NDc1N15BMl5BanBnXkFtZTgwNTc1NjQwMjE@.jpg",
+      "Released_Year": "2014",
+      "Series_Title": "Dawn of the Planet of the Apes",
+      "row_id": 899
     }
   ],
-  "total": 233
+  "total": 189
 }

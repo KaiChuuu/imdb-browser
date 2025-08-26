@@ -26,7 +26,7 @@ def range_movies():
     rating = request.args.get("rating")
     sort_by = request.args.getlist("sort")
 
-    query = '''SELECT "Series_Title", "row_id", "Poster_Link", "Released_Year", "IMDB_Rating", COUNT(*) OVER() AS "total_count"
+    query = '''SELECT "Genre", "Series_Title", "row_id", "Poster_Link", "Released_Year", "IMDB_Rating", COUNT(*) OVER() AS "total_count"
             FROM "imdb_movies"
             WHERE 1=1'''
 

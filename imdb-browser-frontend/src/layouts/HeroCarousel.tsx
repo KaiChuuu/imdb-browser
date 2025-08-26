@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import { fetchData } from "@/services/RandomMovieDataService";
 import { type RandomMovieDataType } from "@/types/RandomMovieDataType";
@@ -36,13 +37,22 @@ function HeroCarousel() {
         {data.map((item, index) => (
           <div className="flex justify-center w-full flex-shrink-0" key={index}>
             <div className="flex py-15 px-25 gap-15 bg-stripes border rounded">
-              <Poster width="16rem" src={item.Poster_Link} />
+              <Link
+                to={`/detail/${item.row_id}`}
+                state={{ genres: item.Genre }}
+              >
+                <Poster width="16rem" height="100%" src={item.Poster_Link} />
+              </Link>
 
               <div className="ml-4 max-w-lg flex flex-col h-full justify-between">
                 <div>
-                  <div className="mt-5 text-base-xl">
+                  <Link
+                    to={`/detail/${item.row_id}`}
+                    state={{ genres: item.Genre }}
+                    className="mt-5 text-base-xl hover:underline underline-offset-5"
+                  >
                     {item.Series_Title.toUpperCase()} ({item.Released_Year})
-                  </div>
+                  </Link>
 
                   {/* TAGS */}
                   <div className="mt-5 flex gap-5">
@@ -70,9 +80,13 @@ function HeroCarousel() {
                   <div className="mt-5 text-base-lg">{item.Overview}</div>
                 </div>
 
-                <button className="mb-5 text-base-lg self-start rounded px-3 py-2 btn-default">
+                <Link
+                  to={`/detail/${item.row_id}`}
+                  state={{ genres: item.Genre }}
+                  className="mb-5 text-base-lg self-start rounded px-3 py-2 btn-default"
+                >
                   MORE DETAILS
-                </button>
+                </Link>
               </div>
             </div>
           </div>

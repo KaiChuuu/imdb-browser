@@ -22,11 +22,19 @@ def get_movie_details(movie_id):
 def similar_movies(movie_id, limit):
     genres = request.args.get("genre")
 
-    sql = text('''SELECT "Series_Title", "row_id", "Poster_Link", "Released_Year", "IMDB_Rating"
+    query = '''SELECT "Genre", "Series_Title", "row_id", "Poster_Link", "Released_Year", "IMDB_Rating"
                 FROM "imdb_movies"
-                WHERE "Genre" ILIKE :genre AND "row_id" != :movie_id
-                LIMIT :limit''')
+                WHERE "row_id" != :movie_id'''
 
-    result = db.session.execute(sql, {"genre": f"%{genres}%", "limit": limit, "movie_id": movie_id})
+    params = {"limit": limit, "movie_id": movie_id}
+
+    if genres:
+        query += ' AND "Genre" ILIKE :genres'
+        params["genres"] = f"%{genres}%"
+
+    query += " LIMIT :limit"
+    sql = text(query)
+
+    result = db.session.execute(sql, params)
     rows = [dict(row) for row in result]
     return jsonify(rows)

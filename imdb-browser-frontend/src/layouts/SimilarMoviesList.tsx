@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import { fetchData } from "@/services/SimilarMovieDataService";
 import { type SimilarMovieDataType } from "@/types/SimilarMovieDataType";
@@ -9,29 +10,35 @@ import StarIcon from "@/assets/icons/star-solid.svg?react";
 
 interface SimilarMoviesListProps {
   row_id: number;
+  genre: string;
 }
 
-function SimilarMoviesList({ row_id }: SimilarMoviesListProps) {
+function SimilarMoviesList({ row_id, genre }: SimilarMoviesListProps) {
   const [data, setData] = useState<SimilarMovieDataType[]>([]);
 
   const movies = 10;
 
   useEffect(() => {
-    fetchData(row_id, movies).then(setData);
-  }, [row_id, movies]);
+    fetchData({ row_id, movies, genre }).then(setData);
+  }, [row_id]);
 
   return (
     <div className="max-w-[1320px] mx-auto">
-      <div className="flex justify-center text-base-xl font-bold">
+      <div className="pt-10 flex justify-center text-base-xl font-bold">
         SIMILAR MOVIES
       </div>
 
-      <div className="my-8">
+      <div className="my-8 pb-20">
         <div className="flex flex-wrap gap-5 justify-center">
           {data.map((item, index) => {
             const poster = item.Poster_Link.replace(/\.jpg$/, "._V1_UX300.jpg");
             return (
-              <div className="flex flex-col w-60" key={index}>
+              <Link
+                to={`/detail/${item.row_id}`}
+                state={{ genres: item.Genre }}
+                className="flex flex-col w-60"
+                key={index}
+              >
                 <div className="relative w-full">
                   <Poster width="100%" height="22.5rem" src={poster} />
 
@@ -49,7 +56,7 @@ function SimilarMoviesList({ row_id }: SimilarMoviesListProps) {
                 <span className="p-1 bg-red text-base-md truncate">
                   {item.Series_Title}
                 </span>
-              </div>
+              </Link>
             );
           })}
         </div>
