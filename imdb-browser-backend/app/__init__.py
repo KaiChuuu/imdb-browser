@@ -1,5 +1,6 @@
 import os
 from flask import Flask
+from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine
 from sqlalchemy.pool import NullPool
@@ -23,6 +24,7 @@ def create_app():
 
     # Create Flask app
     app = Flask(__name__)
+    CORS(app)
     app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URL
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
@@ -35,28 +37,6 @@ def create_app():
     app.register_blueprint(movies_bp, url_prefix="/movies")
 
     from .movie_details import bp as movie_details_bp
-    app.register_blueprint(movie_details_bp)
+    app.register_blueprint(movie_details_bp, url_prefix="/movie_details")
 
     return app
-
-
-# @app.route("/")
-# def home():
-#     return "Flask + Supabase is working!"
-#
-# @app.route("/time")
-# def get_time():
-#     """Example using raw engine"""
-#     with engine.connect() as conn:
-#         result = conn.execute(text("SELECT NOW();"))
-#         current_time = result.scalar()
-#     return jsonify({"time": str(current_time)})
-#
-# @app.route("/users")
-# def get_users():
-#     """Example using Flask-SQLAlchemy ORM"""
-#     result = db.session.execute(text('SELECT "Series_Title" FROM "imdb-movies" LIMIT 5;'))
-#     rows = [dict(row) for row in result]
-#     return jsonify(rows)
-
-# --- MAIN ENTRY ---

@@ -5,3 +5,8 @@ export interface MovieListDataType {
   Released_Year: string;
   Series_Title: string;
 }
+
+export interface MovieListResponse {
+  total: number;
+  movies: MovieListDataType[];
+}

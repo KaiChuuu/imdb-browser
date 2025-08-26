@@ -13,9 +13,11 @@ function HeroCarousel() {
   const [data, setData] = useState<RandomMovieDataType[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const movies = 10;
+
   useEffect(() => {
-    fetchData().then(setData);
-  }, []);
+    fetchData(movies).then(setData);
+  }, [movies]);
 
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev === 0 ? data.length - 1 : prev - 1));

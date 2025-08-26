@@ -1,144 +1,147 @@
-import type { MovieListDataType } from "@/types/MovieListDataType";
+import type { MovieListResponse } from "@/types/MovieListDataType";
 
-export const mockData: MovieListDataType[] = [
-  {
-    "IMDB_Rating": 8.1,
-    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BZGE1MDg5M2MtNTkyZS00MTY5LTg1YzUtZTlhZmM1Y2EwNmFmXkEyXkFqcGdeQXVyNjA3OTI0MDc@.jpg",
-    "Released_Year": "2020",
-    "Series_Title": "Soul",
-    "row_id": 216
-  },
-  {
-    "IMDB_Rating": 7.9,
-    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BNmI0MTliMTAtMmJhNC00NTJmLTllMzQtMDI3NzA1ODMyZWI1XkEyXkFqcGdeQXVyODE5NzE3OTE@.jpg",
-    "Released_Year": "2020",
-    "Series_Title": "Dil Bechara",
-    "row_id": 470
-  },
-  {
-    "IMDB_Rating": 7.8,
-    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BOTNjM2Y2ZjgtMDc5NS00MDQ1LTgyNGYtYzYwMTAyNWQwYTMyXkEyXkFqcGdeQXVyMjE4NzUxNDA@.jpg",
-    "Released_Year": "2020",
-    "Series_Title": "Druk",
-    "row_id": 615
-  },
-  {
-    "IMDB_Rating": 8.6,
-    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BYWZjMjk3ZTItODQ2ZC00NTY5LWE0ZDYtZTI3MjcwN2Q5NTVkXkEyXkFqcGdeQXVyODk4OTc3MTY@.jpg",
-    "Released_Year": "2019",
-    "Series_Title": "Gisaengchung",
-    "row_id": 28
-  },
-  {
-    "IMDB_Rating": 8.2,
-    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BYjg2ZDI2YTYtN2EwYi00YWI5LTgyMWQtMWFkYmE3NmJkOGVhXkEyXkFqcGdeQXVyODE5NzE3OTE@.jpg",
-    "Released_Year": "2019",
-    "Series_Title": "Chhichhore",
-    "row_id": 140
-  },
-  {
-    "IMDB_Rating": 8.2,
-    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMWYwOThjM2ItZGYxNy00NTQwLWFlZWEtM2MzM2Q5MmY3NDU5XkEyXkFqcGdeQXVyMTkxNjUyNQ@@.jpg",
-    "Released_Year": "2019",
-    "Series_Title": "Klaus",
-    "row_id": 147
-  },
-  {
-    "IMDB_Rating": 7.9,
-    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BZjU0Yzk2MzEtMjAzYy00MzY0LTg2YmItM2RkNzdkY2ZhN2JkXkEyXkFqcGdeQXVyNDg4NjY5OTQ@.jpg",
-    "Released_Year": "2019",
-    "Series_Title": "Jojo Rabbit",
-    "row_id": 481
-  },
-  {
-    "IMDB_Rating": 7.9,
-    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMGUwZjliMTAtNzAxZi00MWNiLWE2NzgtZGUxMGQxZjhhNDRiXkEyXkFqcGdeQXVyNjU1NzU3MzE@.jpg",
-    "Released_Year": "2019",
-    "Series_Title": "Knives Out",
-    "row_id": 469
-  },
-  {
-    "IMDB_Rating": 7.9,
-    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BZGVmY2RjNDgtMTc3Yy00YmY0LTgwODItYzBjNWJhNTRlYjdkXkEyXkFqcGdeQXVyMjM4NTM5NDY@.jpg",
-    "Released_Year": "2019",
-    "Series_Title": "Marriage Story",
-    "row_id": 472
-  },
-  {
-    "IMDB_Rating": 7.8,
-    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMTYzMDM4NzkxOV5BMl5BanBnXkFtZTgwNzM1Mzg2NzM@.jpg",
-    "Released_Year": "2019",
-    "Series_Title": "Toy Story 4",
-    "row_id": 599
-  },
-  {
-    "IMDB_Rating": 7.8,
-    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMTlkMmVmYjktYTc2NC00ZGZjLWEyOWUtMjc2MDMwMjQwOTA5XkEyXkFqcGdeQXVyNTI4MzE4MDU@.jpg",
-    "Released_Year": "2019",
-    "Series_Title": "The Gentlemen",
-    "row_id": 573
-  },
-  {
-    "IMDB_Rating": 7.6,
-    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BOTg4ZTNkZmUtMzNlZi00YmFjLTk1MmUtNWQwNTM0YjcyNTNkXkEyXkFqcGdeQXVyNjg2NjQwMDQ@.jpg",
-    "Released_Year": "2019",
-    "Series_Title": "Once Upon a Time... in Hollywood",
-    "row_id": 879
-  },
-  {
-    "IMDB_Rating": 7.6,
-    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BOWVmZGQ0MGYtMDI1Yy00MDkxLWJiYjQtMmZjZmQ0NDFmMDRhXkEyXkFqcGdeQXVyNjg3MDMxNzU@.jpg",
-    "Released_Year": "2019",
-    "Series_Title": "The Peanut Butter Falcon",
-    "row_id": 884
-  },
-  {
-    "IMDB_Rating": 8.2,
-    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BYzIzYmJlYTYtNGNiYy00N2EwLTk4ZjItMGYyZTJiOTVkM2RlXkEyXkFqcGdeQXVyODY1NDk1NjE@.jpg",
-    "Released_Year": "2018",
-    "Series_Title": "Green Book",
-    "row_id": 143
-  },
-  {
-    "IMDB_Rating": 8.0,
-    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BNjZlMDdmN2YtYThmZi00NGQzLTk0ZTQtNTUyZDFmODExOGNiXkEyXkFqcGdeQXVyODE5NzE3OTE@.jpg",
-    "Released_Year": "2018",
-    "Series_Title": "Badhaai ho",
-    "row_id": 329
-  },
-  {
-    "IMDB_Rating": 7.9,
-    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BZDQwOWQ2NmUtZThjZi00MGM0LTkzNDctMzcyMjcyOGI1OGRkXkEyXkFqcGdeQXVyMTA3MDk2NDg2.jpg",
-    "Released_Year": "2018",
-    "Series_Title": "Isle of Dogs",
-    "row_id": 475
-  },
-  {
-    "IMDB_Rating": 7.7,
-    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BNjk1Njk3YjctMmMyYS00Y2I4LThhMzktN2U0MTMyZTFlYWQ5XkEyXkFqcGdeQXVyODM2ODEzMDA@.jpg",
-    "Released_Year": "2018",
-    "Series_Title": "Deadpool 2",
-    "row_id": 723
-  },
-  {
-    "IMDB_Rating": 8.2,
-    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMjI0ODcxNzM1N15BMl5BanBnXkFtZTgwMzIwMTEwNDI@.jpg",
-    "Released_Year": "2017",
-    "Series_Title": "Three Billboards Outside Ebbing, Missouri",
-    "row_id": 144
-  },
-  {
-    "IMDB_Rating": 7.9,
-    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMjMyNDkzMzI1OF5BMl5BanBnXkFtZTgwODcxODg5MjI@.jpg",
-    "Released_Year": "2017",
-    "Series_Title": "Thor: Ragnarok",
-    "row_id": 479
-  },
-  {
-    "IMDB_Rating": 7.8,
-    "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMmYwNWZlNzEtNjE4Zi00NzQ4LWI2YmUtOWZhNzZhZDYyNmVmXkEyXkFqcGdeQXVyNzYzODM3Mzg@.jpg",
-    "Released_Year": "2017",
-    "Series_Title": "Paddington 2",
-    "row_id": 580
-  }
-]
+export const mockData: MovieListResponse = {
+  "movies": [
+    {
+      "IMDB_Rating": 7.6,
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BNGEwMTRmZTQtMDY4Ni00MTliLTk5ZmMtOWMxYWMyMTllMDg0L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjc1NTYyMjg@.jpg",
+      "Released_Year": "1961",
+      "Series_Title": "Breakfast at Tiffany's",
+      "row_id": 995
+    },
+    {
+      "IMDB_Rating": 7.6,
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BZjQyMGUwNzAtNTc2MC00Y2FjLThlM2ItZGRjNzM0OWVmZGYyXkEyXkFqcGdeQXVyNjc1NTYyMjg@.jpg",
+      "Released_Year": "1964",
+      "Series_Title": "A Hard Day's Night",
+      "row_id": 994
+    },
+    {
+      "IMDB_Rating": 7.6,
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMzAyNDUwYzUtN2NlMC00ODliLWExMjgtMGMzNmYzZmUwYTg1XkEyXkFqcGdeQXVyNjc1NTYyMjg@.jpg",
+      "Released_Year": "1970",
+      "Series_Title": "Kelly's Heroes",
+      "row_id": 992
+    },
+    {
+      "IMDB_Rating": 7.6,
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BYzZhODNiOWYtMmNkNS00OTFhLTkzYzktYTQ4ZmNmZWMyN2ZiL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjc1NTYyMjg@.jpg",
+      "Released_Year": "1973",
+      "Series_Title": "The Long Goodbye",
+      "row_id": 990
+    },
+    {
+      "IMDB_Rating": 7.6,
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMGQ0OGM5YjItYzYyMi00NmVmLWI3ODMtMTY2NGRkZmI5MWU2XkEyXkFqcGdeQXVyMzI0NDc4ODY@.jpg",
+      "Released_Year": "1979",
+      "Series_Title": "The Muppet Movie",
+      "row_id": 985
+    },
+    {
+      "IMDB_Rating": 7.6,
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BM2I1ZWNkYjEtYWY3ZS00MmMwLWI5OTEtNWNkZjNiYjIwNzY0XkEyXkFqcGdeQXVyNTI4MjkwNjA@.jpg",
+      "Released_Year": "1987",
+      "Series_Title": "Planes, Trains & Automobiles",
+      "row_id": 979
+    },
+    {
+      "IMDB_Rating": 7.6,
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BODk1ZWM4ZjItMjFhZi00MDMxLTgxNmYtODFhNWZlZTkwM2UwXkEyXkFqcGdeQXVyMTQxNzMzNDI@.jpg",
+      "Released_Year": "1988",
+      "Series_Title": "The Naked Gun: From the Files of Police Squad!",
+      "row_id": 978
+    },
+    {
+      "IMDB_Rating": 7.6,
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMjE0ODEwNjM2NF5BMl5BanBnXkFtZTcwMjU2Mzg3NA@@.jpg",
+      "Released_Year": "1989",
+      "Series_Title": "When Harry Met Sally...",
+      "row_id": 977
+    },
+    {
+      "IMDB_Rating": 7.6,
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMzFkM2YwOTQtYzk2Mi00N2VlLWE3NTItN2YwNDg1YmY0ZDNmXkEyXkFqcGdeQXVyMTMxODk2OTU@.jpg",
+      "Released_Year": "1990",
+      "Series_Title": "Home Alone",
+      "row_id": 975
+    },
+    {
+      "IMDB_Rating": 7.6,
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BNjg5ZDM0MTEtYTZmNC00NDJiLWI5MTktYzk4N2QxY2IxZTc2L2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@.jpg",
+      "Released_Year": "1991",
+      "Series_Title": "Delicatessen",
+      "row_id": 974
+    },
+    {
+      "IMDB_Rating": 7.6,
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMTQxNDYzMTg1M15BMl5BanBnXkFtZTgwNzk4MDgxMTE@.jpg",
+      "Released_Year": "1992",
+      "Series_Title": "My Cousin Vinny",
+      "row_id": 972
+    },
+    {
+      "IMDB_Rating": 7.6,
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMTM5MDY5MDQyOV5BMl5BanBnXkFtZTgwMzM3NzMxMDE@.jpg",
+      "Released_Year": "1993",
+      "Series_Title": "Dazed and Confused",
+      "row_id": 971
+    },
+    {
+      "IMDB_Rating": 7.6,
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BNTliYTI1YTctMTE0Mi00NDM0LThjZDgtYmY3NGNiODBjZjAwXkEyXkFqcGdeQXVyMTAwMzUyOTc@.jpg",
+      "Released_Year": "1994",
+      "Series_Title": "Trois couleurs: Blanc",
+      "row_id": 969
+    },
+    {
+      "IMDB_Rating": 7.6,
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BNjA2ZDY3ZjYtZmNiMC00MDU5LTgxMWEtNzk1YmI3NzdkMTU0XkEyXkFqcGdeQXVyNjQyMjcwNDM@.jpg",
+      "Released_Year": "1998",
+      "Series_Title": "Fear and Loathing in Las Vegas",
+      "row_id": 959
+    },
+    {
+      "IMDB_Rating": 7.6,
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BZTM2ZGJmNjQtN2UyOS00NjcxLWFjMDktMDE2NzMyNTZlZTBiXkEyXkFqcGdeQXVyNzkwMjQ5NzM@.jpg",
+      "Released_Year": "2000",
+      "Series_Title": "American Psycho",
+      "row_id": 955
+    },
+    {
+      "IMDB_Rating": 7.6,
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BYmUzODQ5MGItZTZlNy00MDBhLWIxMmItMjg4Y2QyNDFlMWQ2XkEyXkFqcGdeQXVyMTMxODk2OTU@.jpg",
+      "Released_Year": "2001",
+      "Series_Title": "The Royal Tenenbaums",
+      "row_id": 947
+    },
+    {
+      "IMDB_Rating": 7.6,
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMTUzNDgyMzg3Ml5BMl5BanBnXkFtZTcwMzIxNTAwMQ@@.jpg",
+      "Released_Year": "2003",
+      "Series_Title": "The Station Agent",
+      "row_id": 939
+    },
+    {
+      "IMDB_Rating": 7.6,
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BNjIwOGJhY2QtMTA5Yi00MDhlLWE5OTgtYmIzZDNlM2UwZjMyXkEyXkFqcGdeQXVyNTA4NzY1MzY@.jpg",
+      "Released_Year": "2003",
+      "Series_Title": "Jeux d'enfants",
+      "row_id": 937
+    },
+    {
+      "IMDB_Rating": 7.6,
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMTU5MDg0NTQ1N15BMl5BanBnXkFtZTcwMjA4Mjg3Mg@@.jpg",
+      "Released_Year": "2009",
+      "Series_Title": "Zombieland",
+      "row_id": 913
+    },
+    {
+      "IMDB_Rating": 7.6,
+      "Poster_Link": "https://m.media-amazon.com/images/M/MV5BMTMzNzEzMDYxM15BMl5BanBnXkFtZTcwMTc0NTMxMw@@.jpg",
+      "Released_Year": "2010",
+      "Series_Title": "Kick-Ass",
+      "row_id": 909
+    }
+  ],
+  "total": 233
+}

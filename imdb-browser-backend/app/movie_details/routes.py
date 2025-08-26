@@ -2,9 +2,31 @@ from . import bp
 from .. import db
 
 from sqlalchemy import text
-from flask import jsonify
+from flask import request, jsonify
 
-@bp.route("/<int:movie_title>")
-def get_movie_details():
+@bp.route("/<int:movie_id>")
+def get_movie_details(movie_id):
+    sql = text(
+        'SELECT "Series_Title", "row_id", "Poster_Link", "Released_Year", "Runtime", '
+        '"Genre", "IMDB_Rating", "Overview", "Certificate", "Meta_score", '
+        '"Director", "Star1", "Star2", "Star3", "Star4", "No_of_Votes", "Gross" '
+        'FROM "imdb_movies" '
+        'WHERE "row_id" = :movie_id'
+    )
+    result = db.session.execute(sql, {"movie_id": movie_id}).mappings().first()
+    if not result:
+        return jsonify({"error": "Movie not found"}), 404
+    return jsonify(dict(result))
 
-    pass
+@bp.route("/<int:movie_id>/similar/<int:limit>")
+def similar_movies(movie_id, limit):
+    genres = request.args.get("genre")
+
+    sql = text('''SELECT "Series_Title", "row_id", "Poster_Link", "Released_Year", "IMDB_Rating"
+                FROM "imdb_movies"
+                WHERE "Genre" ILIKE :genre AND "row_id" != :movie_id
+                LIMIT :limit''')
+
+    result = db.session.execute(sql, {"genre": f"%{genres}%", "limit": limit, "movie_id": movie_id})
+    rows = [dict(row) for row in result]
+    return jsonify(rows)

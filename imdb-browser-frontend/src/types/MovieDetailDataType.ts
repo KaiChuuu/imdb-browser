@@ -14,6 +14,6 @@ export interface MovieDetailDataType {
   Star2: string;
   Star3: string;
   Star4: string;
-  No_of_votes: number;
+  No_of_Votes: number;
   Gross: number;
 }

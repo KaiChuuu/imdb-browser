@@ -26,7 +26,7 @@ def range_movies():
     rating = request.args.get("rating")
     sort_by = request.args.getlist("sort")
 
-    query = '''SELECT "Series_Title", "row_id", "Poster_Link", "Released_Year", "IMDB_Rating"
+    query = '''SELECT "Series_Title", "row_id", "Poster_Link", "Released_Year", "IMDB_Rating", COUNT(*) OVER() AS "total_count"
             FROM "imdb_movies"
             WHERE 1=1'''
 
@@ -64,7 +64,15 @@ def range_movies():
     query += " LIMIT :limit OFFSET :offset"
 
     sql = text(query)
+
     result = db.session.execute(sql, params)
     rows = [dict(row) for row in result]
 
-    return jsonify(rows)
+    total = rows[0]["total_count"] if rows else 0
+    for row in rows:
+        row.pop("total_count", None)
+
+    return jsonify({
+        "total": total,
+        "movies": rows
+    })

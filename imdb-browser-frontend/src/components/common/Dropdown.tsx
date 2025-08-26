@@ -27,9 +27,7 @@ function Dropdown({
         value={selected}
         onChange={handleChange}
       >
-        <option value="" disabled hidden>
-          {placeholder}
-        </option>
+        {placeholder && <option value="">{placeholder}</option>}
         {options.map((option) => (
           <option key={option} value={option}>
             {option}

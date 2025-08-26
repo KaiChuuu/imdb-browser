@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 interface PosterProps {
-  src: string;
+  src?: string;
   width?: string;
   height?: string;
 }
@@ -20,7 +20,7 @@ function Poster({ src, width, height }: PosterProps) {
     <img
       src={src}
       onError={() => setFailed(true)}
-      style={{ width, height }}
+      style={{ width: width, height }}
       alt="poster"
     />
   );
