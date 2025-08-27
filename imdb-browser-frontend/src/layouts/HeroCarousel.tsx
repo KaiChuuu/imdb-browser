@@ -39,6 +39,14 @@ function HeroCarousel() {
     setCurrentIndex((prev) => (prev === data.length - 1 ? 0 : prev + 1));
   };
 
+  if (data.length === 0) {
+    return (
+      <div className="py-50 flex justify-center items-center text-base-xl">
+        Loading...
+      </div>
+    );
+  }
+
   return (
     <div className="relative w-full overflow-hidden">
       <div

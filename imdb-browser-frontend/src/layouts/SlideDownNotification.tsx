@@ -20,7 +20,7 @@ function SlideDownNotification() {
       }`}
     >
       <div className="bg-light-yellow text-black text-base-xl text-center py-5 font-medium shadow-md">
-        ⚠️ First load may take ~50 seconds. Server is spinning up, please be
+        ⚠️ First load may take ~10-50 seconds. Server is spinning up, please be
         patient! Thank you!
       </div>
     </div>

@@ -118,6 +118,68 @@ function MovieList() {
     startPageRange + totalPaginationButtons - 1
   );
 
+  if (!data) {
+    return (
+      <div className="max-w-[1320px] mx-auto">
+        <div className="flex justify-center text-base-xl font-bold">MOVIES</div>
+
+        <div className="flex flex-wrap gap-5 mt-6 bg-red text-base-xl text-white px-5 py-4 rounded items-center justify-between">
+          <div className="flex flex-wrap gap-5">
+            <div className="flex flex-wrap gap-5 mr-0 md:mr-15">
+              <Dropdown
+                placeholder="Select Genres"
+                selected={draftGenre}
+                setSelected={setDraftGenre}
+                options={genres}
+              />
+              <Dropdown
+                placeholder="Select Year"
+                selected={draftYear}
+                setSelected={setDraftYear}
+                options={years}
+              />
+              <Dropdown
+                placeholder="Select Rating"
+                selected={draftRating}
+                setSelected={setDraftRating}
+                options={ratings}
+              />
+            </div>
+
+            <div className="flex flex-wrap gap-5">
+              <Dropdown
+                title="Sort Rating"
+                selected={draftSortRating}
+                setSelected={(val: string) =>
+                  setDraftSortRating(val as "ASC" | "DESC")
+                }
+                options={sorting}
+              />
+              <Dropdown
+                title="Sort Year"
+                selected={draftSortYear}
+                setSelected={(val: string) =>
+                  setDraftSortYear(val as "ASC" | "DESC")
+                }
+                options={sorting}
+              />
+            </div>
+          </div>
+
+          <div className="flex">
+            <button className="text-base-lg self-start rounded px-3 py-2 btn-default">
+              SUBMIT
+            </button>
+          </div>
+        </div>
+
+        <div className="my-50 flex justify-center items-center text-base-xl">
+          Loading...
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="max-w-[1320px] mx-auto">
       <div className="flex justify-center text-base-xl font-bold">MOVIES</div>

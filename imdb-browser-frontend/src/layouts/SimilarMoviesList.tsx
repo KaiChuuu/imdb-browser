@@ -14,7 +14,7 @@ interface SimilarMoviesListProps {
 }
 
 function SimilarMoviesList({ row_id, genre }: SimilarMoviesListProps) {
-  const [data, setData] = useState<SimilarMovieDataType[]>([]);
+  const [data, setData] = useState<SimilarMovieDataType[]>();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [movies, setMoviesPerPage] = useState(10);
 
@@ -42,6 +42,20 @@ function SimilarMoviesList({ row_id, genre }: SimilarMoviesListProps) {
   useEffect(() => {
     fetchData({ row_id, movies, genre }).then(setData);
   }, [movies, row_id]);
+
+  if (!data) {
+    return (
+      <div className="max-w-[1320px] mx-auto">
+        <div className="pt-15 flex justify-center text-base-xl font-bold">
+          SIMILAR MOVIES
+        </div>
+
+        <div className="my-50 flex justify-center items-center text-base-xl">
+          Loading...
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-[1320px] mx-auto">

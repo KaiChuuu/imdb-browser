@@ -89,6 +89,31 @@ function SearchPage() {
     startPageRange + totalPaginationButtons - 1
   );
 
+  if (!data) {
+    return (
+      <div className="flex flex-col min-h-screen">
+        <Navbar />
+
+        <div className="flex flex-1">
+          <MovieBackground>
+            <div className="max-w-[1320px] mx-auto mb-8 mt-15">
+              <div className="flex gap-5 text-base-xl font-bold mb-8 px-5">
+                <div>Search Results:</div>
+                <div>{title}</div>
+              </div>
+
+              <div className="my-50 flex justify-center items-center text-base-xl">
+                Loading...
+              </div>
+            </div>
+          </MovieBackground>
+        </div>
+
+        <Footer />
+      </div>
+    );
+  }
+
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
