@@ -38,3 +38,30 @@ def similar_movies(movie_id, limit):
     result = db.session.execute(sql, params)
     rows = [dict(row) for row in result]
     return jsonify(rows)
+
+@bp.route("/search/<string:movie_title>")
+def search_movie_title(movie_title):
+    page = int(request.args.get("page", 1))
+    limit = int(request.args.get("limit", 10))
+    offset = (page - 1) * limit
+
+    query = text("""
+            SELECT "Genre", "Series_Title", "row_id", "Poster_Link", "Released_Year", "IMDB_Rating", COUNT(*) OVER() AS "total_count"
+            FROM "imdb_movies" 
+            WHERE "Series_Title" ILIKE :title
+            LIMIT :limit OFFSET :offset
+        """)
+
+    params = {"limit": limit, "offset": offset, "title": f"%{movie_title}%"}
+
+    result = db.session.execute(query, params)
+    rows = [dict(row) for row in result]
+
+    total = rows[0]["total_count"] if rows else 0
+    for row in rows:
+        row.pop("total_count", None)
+
+    return jsonify({
+        "total": total,
+        "movies": rows
+    })

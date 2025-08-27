@@ -15,7 +15,7 @@ const SearchBar = ({ query, setQuery }: SearchBarProps) => {
         value={query}
         onChange={handleChange}
         placeholder="Search..."
-        className="w-full text-base-sm bg-black rounded p-2"
+        className="w-full text-base-lg bg-black rounded py-2 px-3"
       />
     </div>
   );

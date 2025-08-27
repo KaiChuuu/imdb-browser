@@ -13,12 +13,23 @@ import LeftArrowIcon from "@/assets/icons/left-arrow.svg?react";
 function HeroCarousel() {
   const [data, setData] = useState<RandomMovieDataType[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
 
   const movies = 10;
 
   useEffect(() => {
     fetchData(movies).then(setData);
   }, [movies]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!isHovered) {
+        nextSlide();
+      }
+    }, 5000);
+
+    return () => clearInterval(interval); // cleanup on unmount
+  }, [isHovered, currentIndex, data.length]);
 
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev === 0 ? data.length - 1 : prev - 1));
@@ -35,16 +46,24 @@ function HeroCarousel() {
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {data.map((item, index) => (
-          <div className="flex justify-center w-full flex-shrink-0" key={index}>
-            <div className="flex py-15 px-25 gap-15 bg-stripes border rounded">
+          <div
+            className="flex justify-center w-full flex-shrink-0 px-30"
+            key={index}
+          >
+            <div
+              className="relative flex flex-wrap py-[clamp(2rem,5%,4rem)] px-[clamp(1rem,5%,6.25rem)] gap-15 bg-stripes border rounded"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
               <Link
                 to={`/detail/${item.row_id}`}
                 state={{ genres: item.Genre }}
+                className="border border-white/50 min-w-[256px] h-[398px]"
               >
                 <Poster width="16rem" height="100%" src={item.Poster_Link} />
               </Link>
 
-              <div className="ml-4 max-w-lg flex flex-col h-full justify-between">
+              <div className="ml-4 max-w-lg flex flex-col h-full justify-start xl:justify-between">
                 <div>
                   <Link
                     to={`/detail/${item.row_id}`}
@@ -55,7 +74,7 @@ function HeroCarousel() {
                   </Link>
 
                   {/* TAGS */}
-                  <div className="mt-5 flex gap-5">
+                  <div className="mt-5 flex flex-wrap gap-5">
                     <div className="px-2 py-1 border rounded inline-flex items-stretch gap-1">
                       <StarIcon className="w-5 h-5 text-yellow" />
                       <span className="text-base-lg leading-none">
@@ -83,28 +102,28 @@ function HeroCarousel() {
                 <Link
                   to={`/detail/${item.row_id}`}
                   state={{ genres: item.Genre }}
-                  className="mb-5 text-base-lg self-start rounded px-3 py-2 btn-default"
+                  className="mt-5 xl:mt-0 mb-0 xl:mb-5 text-base-lg self-start rounded px-3 py-2 btn-default"
                 >
                   MORE DETAILS
                 </Link>
               </div>
+
+              <button
+                onClick={prevSlide}
+                className="absolute left-[-5rem] top-1/2 -translate-y-1/2 btn-default rounded hidden md:block"
+              >
+                <LeftArrowIcon className="h-13 text-white" />
+              </button>
+              <button
+                onClick={nextSlide}
+                className="absolute right-[-5rem] top-1/2 -translate-y-1/2 btn-default rounded hidden md:block"
+              >
+                <LeftArrowIcon className="h-13 rotate-180 text-white" />
+              </button>
             </div>
           </div>
         ))}
       </div>
-
-      <button
-        onClick={prevSlide}
-        className="absolute left-[25%] top-1/2 -translate-y-1/2 btn-default rounded"
-      >
-        <LeftArrowIcon className="h-13 text-white" />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-[25%] top-1/2 -translate-y-1/2 btn-default rounded"
-      >
-        <LeftArrowIcon className="h-13 rotate-180 text-white" />
-      </button>
     </div>
   );
 }

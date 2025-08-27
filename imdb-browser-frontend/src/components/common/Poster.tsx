@@ -12,7 +12,7 @@ function Poster({ src, width, height }: PosterProps) {
   return failed ? (
     <div
       className="text-base-md flex items-center justify-center bg-stripes"
-      style={{ width, height }}
+      style={{ width: width, height: height }}
     >
       No Image Available
     </div>
@@ -20,7 +20,7 @@ function Poster({ src, width, height }: PosterProps) {
     <img
       src={src}
       onError={() => setFailed(true)}
-      style={{ width: width, height }}
+      style={{ width: width, height: height }}
       alt="poster"
     />
   );

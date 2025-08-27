@@ -20,6 +20,7 @@ import LeftArrowIcon from "@/assets/icons/left-arrow.svg?react";
 
 function MovieList() {
   const [data, setData] = useState<MovieListResponse>();
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const [draftGenre, setDraftGenre] = useState("");
   const [draftYear, setDraftYear] = useState("");
@@ -36,8 +37,34 @@ function MovieList() {
   const [totalPages, setTotalPages] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const movies = 20;
-  const totalToShow = 10;
+  const [movies, setMoviesPerPage] = useState(20);
+  const [totalPaginationButtons, setTotalPaginationButtons] = useState(10);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (windowWidth >= 1200) {
+      setMoviesPerPage(20);
+      setTotalPaginationButtons(10);
+    } else if (windowWidth >= 900) {
+      setMoviesPerPage(12);
+      setTotalPaginationButtons(8);
+    } else if (windowWidth >= 600) {
+      setMoviesPerPage(9);
+      setTotalPaginationButtons(5);
+    } else if (windowWidth >= 500) {
+      setMoviesPerPage(6);
+      setTotalPaginationButtons(3);
+    } else {
+      setMoviesPerPage(2);
+      setTotalPaginationButtons(3);
+    }
+  }, [windowWidth]);
 
   useEffect(() => {
     fetchData({
@@ -82,19 +109,22 @@ function MovieList() {
   const startPageRange = Math.max(
     1,
     Math.min(
-      currentPage - Math.floor(totalToShow / 2),
-      totalPages - totalToShow + 1
+      currentPage - Math.floor(totalPaginationButtons / 2),
+      totalPages - totalPaginationButtons + 1
     )
   );
-  const endPageRange = Math.min(totalPages, startPageRange + totalToShow - 1);
+  const endPageRange = Math.min(
+    totalPages,
+    startPageRange + totalPaginationButtons - 1
+  );
 
   return (
     <div className="max-w-[1320px] mx-auto">
       <div className="flex justify-center text-base-xl font-bold">MOVIES</div>
 
-      <div className="flex mt-6 bg-red text-base-xl text-white px-5 py-4 rounded items-center justify-between">
-        <div className="flex gap-20">
-          <div className="flex gap-5">
+      <div className="flex flex-wrap gap-5 mt-6 bg-red text-base-xl text-white px-5 py-4 rounded items-center justify-between">
+        <div className="flex flex-wrap gap-5">
+          <div className="flex flex-wrap gap-5 mr-0 md:mr-15">
             <Dropdown
               placeholder="Select Genres"
               selected={draftGenre}
@@ -115,7 +145,7 @@ function MovieList() {
             />
           </div>
 
-          <div className="flex gap-5">
+          <div className="flex flex-wrap gap-5">
             <Dropdown
               title="Sort Rating"
               selected={draftSortRating}
@@ -147,40 +177,49 @@ function MovieList() {
 
       <div className="my-8">
         <div className="flex flex-wrap gap-5 justify-center">
-          {data?.movies.map((item: MovieListDataType, index) => {
-            const poster = item.Poster_Link.replace(/\.jpg$/, "._V1_UX300.jpg");
-            return (
-              <Link
-                to={`/detail/${item.row_id}`}
-                state={{ genres: item.Genre }}
-                className="flex flex-col w-60"
-                key={index}
-              >
-                <div className="relative w-full">
-                  <Poster width="100%" height="22.5rem" src={poster} />
+          {data?.movies && data.movies.length > 0 ? (
+            data.movies.map((item: MovieListDataType, index) => {
+              const poster = item.Poster_Link.replace(
+                /\.jpg$/,
+                "._V1_UX300.jpg"
+              );
+              return (
+                <Link
+                  to={`/detail/${item.row_id}`}
+                  state={{ genres: item.Genre }}
+                  className="flex flex-col w-60 border border-white/50"
+                  key={index}
+                >
+                  <div className="relative w-full">
+                    <Poster width="100%" height="22.5rem" src={poster} />
 
-                  <div className="flex gap-1 leading-none absolute top-2 right-2 bg-grey px-2 py-1 rounded">
-                    <StarIcon className="w-5 h-5 text-yellow" />
-                    <span className="text-base-lg leading-none">
-                      {item.IMDB_Rating} / 10
-                    </span>
-                  </div>
+                    <div className="flex gap-1 leading-none absolute top-2 right-2 bg-grey px-2 py-1 rounded">
+                      <StarIcon className="w-5 h-5 text-yellow" />
+                      <span className="text-base-lg leading-none">
+                        {item.IMDB_Rating} / 10
+                      </span>
+                    </div>
 
-                  <div className="absolute text-base-lg leading-none bottom-2 left-2 bg-grey px-2 py-1 rounded">
-                    {item.Released_Year}
+                    <div className="absolute text-base-lg leading-none bottom-2 left-2 bg-grey px-2 py-1 rounded">
+                      {item.Released_Year}
+                    </div>
                   </div>
-                </div>
-                <span className="p-1 bg-red text-base-md truncate">
-                  {item.Series_Title}
-                </span>
-              </Link>
-            );
-          })}
+                  <span className="p-1 bg-red text-base-md truncate">
+                    {item.Series_Title}
+                  </span>
+                </Link>
+              );
+            })
+          ) : (
+            <div className="flex justify-center items-center w-full py-20 text-base-xl">
+              No movies found
+            </div>
+          )}
         </div>
       </div>
 
       <div className="flex flex-wrap justify-center gap-5 pt-2 pb-20">
-        {totalPages > totalToShow && (
+        {totalPages > totalPaginationButtons && (
           <button
             onClick={prevPage}
             className="flex text-base-md w-10 h-10 items-center justify-center rounded btn-default"
@@ -203,7 +242,7 @@ function MovieList() {
           );
         })}
 
-        {totalPages > totalToShow && (
+        {totalPages > totalPaginationButtons && (
           <button
             onClick={nextPage}
             className="flex text-base-md w-10 h-10 items-center justify-center rounded btn-default"

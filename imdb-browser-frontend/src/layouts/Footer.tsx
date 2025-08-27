@@ -1,7 +1,12 @@
+import { Link } from "react-router-dom";
+
 function Footer() {
   return (
-    <div className="py-5 gap-3 flex flex-col items-center bg-red">
-      <div className="text-base-xl text-white">IMDB BROWSER</div>
+    <div className="text-center py-5 gap-3 flex flex-col items-center bg-red">
+      <Link to="/" className="flex items-center gap-2 text-base-xl font-bold">
+        <div className="border p-2">IMDB</div>
+        <div>Browser</div>
+      </Link>
       <a
         href="https://github.com/KaiChuuu/imdb-browser"
         target="_blank"

@@ -30,10 +30,12 @@ function DetailPage() {
     <div className="flex flex-col min-h-screen">
       <Navbar />
 
-      <div className="max-w-[1320px] mx-auto flex flex-col mb-20">
-        <div className="py-10 flex gap-10">
-          <Poster height="35rem" src={data?.Poster_Link} />
-          <div className="mt-13 flex flex-col max-w-xl">
+      <div className="bg-light-black max-w-[1320px] w-full mx-auto flex flex-col pb-20 px-[clamp(1rem,5vw,5rem)]">
+        <div className="py-10 flex flex-wrap gap-10">
+          <div className="border border-white/50 min-w-[256px]">
+            <Poster width="25rem" height="100%" src={data?.Poster_Link} />
+          </div>
+          <div className="xl:mt-13 flex flex-col max-w-xl">
             <span className="text-base-xl font-bold underline underline-offset-7">
               {data?.Series_Title}
             </span>
@@ -42,17 +44,17 @@ function DetailPage() {
           </div>
         </div>
 
-        <div className="flex gap-4">
+        <div className="flex gap-5">
           <div className="flex flex-col w-2/3">
             <hr className="border-t-[0.5px] border-white opacity-35 w-full" />
 
-            <div className="flex gap-5 py-3">
+            <div className="flex flex-wrap gap-2 md:gap-5 py-3">
               <span className="text-base-lg">DIRECTOR: </span>
               <span className="text-base-lg font-bold">{data?.Director}</span>
             </div>
             <hr className="border-t-[0.5px] border-white opacity-35 w-full" />
 
-            <div className="flex gap-5 py-3">
+            <div className="flex flex-wrap gap-2 md:gap-5 py-3">
               <span className="text-base-lg">STARS: </span>
               <span className="text-base-lg font-bold">{data?.Star1}</span>
               <span className="text-base-lg font-bold">{data?.Star2}</span>
@@ -61,13 +63,13 @@ function DetailPage() {
             </div>
             <hr className="border-t-[0.5px] border-white opacity-35 w-full" />
 
-            <div className="flex gap-5 py-3">
+            <div className="flex flex-wrap gap-2 md:gap-5 py-3">
               <span className="text-base-lg">RUNTIME: </span>
               <span className="text-base-lg font-bold">{data?.Runtime}</span>
             </div>
             <hr className="border-t-[0.5px] border-white opacity-35 w-full" />
 
-            <div className="flex gap-5 py-3">
+            <div className="flex flex-wrap gap-2 md:gap-5 py-3">
               <span className="text-base-lg">IMDB RATING: </span>
               <span className="text-base-lg font-bold">
                 {data?.IMDB_Rating} / 10
@@ -75,19 +77,19 @@ function DetailPage() {
             </div>
             <hr className="border-t-[0.5px] border-white opacity-35 w-full" />
 
-            <div className="flex gap-5 py-3">
+            <div className="flex flex-wrap gap-2 md:gap-5 py-3">
               <span className="text-base-lg">META SCORE: </span>
               <span className="text-base-lg font-bold">{data?.Meta_score}</span>
             </div>
             <hr className="border-t-[0.5px] border-white opacity-35 w-full" />
 
-            <div className="flex gap-5 py-3">
+            <div className="flex flex-wrap gap-2 md:gap-5 py-3">
               <span className="text-base-lg">GROSS: </span>
               <span className="text-base-lg font-bold">{gross}</span>
             </div>
             <hr className="border-t-[0.5px] border-white opacity-35 w-full" />
 
-            <div className="flex gap-5 py-3">
+            <div className="flex flex-wrap gap-2 md:gap-5 py-3">
               <span className="text-base-lg">NUMBER OF VOTES: </span>
               <span className="text-base-lg font-bold">
                 {data?.No_of_Votes}
