@@ -17,7 +17,7 @@ export const fetchData = async ({
     query.append("limit", movies.toString());
     query.append("page", currentPage.toString());
 
-    const res = await fetch(`http://localhost:5000/movie_details/search/${title}?${query.toString()}`);
+    const res = await fetch(`https://imdb-browser-api.onrender.com/movie_details/search/${title}?${query.toString()}`);
 
     if (!res.ok) {
       throw new Error(`API error: ${res.status}`);

@@ -3,7 +3,7 @@ import { mockData } from "@/mocks/MovieDetailData";
 
 export const fetchData = async (row_id: number): Promise<MovieDetailDataType> => {
   try {
-    const res = await fetch(`http://localhost:5000/movie_details/${row_id}`);
+    const res = await fetch(`https://imdb-browser-api.onrender.com/movie_details/${row_id}`);
 
     if (!res.ok) {
       throw new Error(`API error: ${res.status}`);

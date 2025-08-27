@@ -13,7 +13,7 @@ export const fetchData = async ({row_id, movies, genre}: SimilarMovieParams): Pr
     if (genre) query.append("genre", genre)
 
     const res = await fetch(
-      `http://localhost:5000/movie_details/${row_id}/similar/${movies}?${query.toString()}`
+      `https://imdb-browser-api.onrender.com/movie_details/${row_id}/similar/${movies}?${query.toString()}`
     );
     
     if (!res.ok) {

@@ -35,7 +35,7 @@ export const fetchData = async ({
     query.append("sort", `rating:${sortRating}`);
     query.append("sort", `year:${sortYear}`);
 
-    const res = await fetch(`http://localhost:5000/movies/?${query.toString()}`);
+    const res = await fetch(`https://imdb-browser-api.onrender.com/movies/?${query.toString()}`);
 
     if (!res.ok) {
       throw new Error(`API error: ${res.status}`);
