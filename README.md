@@ -8,7 +8,7 @@ I transformed this dataset into a PostgreSQL database hosted on **Supabase**, bu
 **Live Website: [imdb-browser-app.vercel.app](https://imdb-browser-app.vercel.app)**
 
 *Please note that render server may take 50 seconds to spin up.  
-You will see mock data in the meantime. Please be patient, thank you!*
+Please be patient, thank you!*
 
 ---
 
