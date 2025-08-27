@@ -44,3 +44,8 @@ You will see mock data in the meantime. Please be patient, thank you!*
 
 ## License
 This project is for **educational purposes only** and is not affiliated with IMDb.
+
+## Screenshots
+<p float="left">
+  <img src="cover.jpg" width="500" height="800" />
+</p>
