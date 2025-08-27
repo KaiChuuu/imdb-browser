@@ -36,7 +36,7 @@ def similar_movies(movie_id, limit):
     sql = text(query)
 
     result = db.session.execute(sql, params)
-    rows = [dict(row) for row in result]
+    rows = [dict(r) for r in result.mappings()]
     return jsonify(rows)
 
 @bp.route("/search/<string:movie_title>")
@@ -55,7 +55,7 @@ def search_movie_title(movie_title):
     params = {"limit": limit, "offset": offset, "title": f"%{movie_title}%"}
 
     result = db.session.execute(query, params)
-    rows = [dict(row) for row in result]
+    rows = [dict(r) for r in result.mappings()]
 
     total = rows[0]["total_count"] if rows else 0
     for row in rows:

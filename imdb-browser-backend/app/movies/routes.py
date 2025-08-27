@@ -12,7 +12,7 @@ def random_movies(limit):
                'LIMIT :limit')
 
     result = db.session.execute(sql, {"limit": limit})
-    rows = [dict(row) for row in result]
+    rows = [dict(r) for r in result.mappings()]
     return jsonify(rows)
 
 @bp.route("/")
@@ -66,7 +66,7 @@ def range_movies():
     sql = text(query)
 
     result = db.session.execute(sql, params)
-    rows = [dict(row) for row in result]
+    rows = [dict(r) for r in result.mappings()]
 
     total = rows[0]["total_count"] if rows else 0
     for row in rows:
