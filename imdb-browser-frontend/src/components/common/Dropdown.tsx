@@ -1,5 +1,3 @@
-import { type ChangeEvent, useState } from "react";
-
 interface DropdownProps {
   title?: string;
   placeholder?: string;
